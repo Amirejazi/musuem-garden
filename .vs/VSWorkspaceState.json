@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\museumgarden",
+    "\\museumgarden\\museumgarden",
+    "\\museumgarden\\static",
+    "\\museumgarden\\templates",
+    "\\museumgarden\\templates\\main_app",
+    "\\museumgarden\\templates\\partial",
+    "\\museumgarden\\templates\\place_app"
+  ],
+  "SelectedNode": "\\museumgarden\\templates\\place_app\\_history.html",
+  "PreviewInSolutionExplorer": false
+}

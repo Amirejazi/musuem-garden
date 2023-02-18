@@ -1,0 +1,11 @@
+<ul class="navbar-nav mr-auto">
+    {% if user.is_authenticated %}
+        <li>
+        <a class="btn btn-outline-info" href="{% url 'account:logout'%}" role="button">خروج</a>
+        </li>
+    {% else %}
+        <li>
+        <a class="btn btn-info" href="{% url 'account:login'%}" role="button">ورود/ثبت نام</a>
+        </li>
+    {% endif %}
+</ul>

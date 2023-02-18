@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Koodak';
+    src: url('../fonts/Koodak.eot?#') format('eot'),
+         url('../fonts/Koodak.ttf') format('truetype'),
+         url('../fonts/Koodak.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    height: 360px;
+    z-index: 10;
+}
+.header-banner {
+    background-color: #333;
+    background-image: url('../../media/images/hed.jpg');
+    background-position: center;
+    background-repeat: revert;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+}
+
+.h1Header {
+    background-color: rgba(41, 160, 89, 0.58);
+    background-size: auto;
+    color: #fff;
+    padding: 0 1rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+}
+
+.myNavCustom {
+    width: 100%;
+    height: 60px;
+    background: #292f36;
+    z-index: 10;
+}
+
+.myNavCustom .myDivCustom {
+    color: white;
+    font-size: 2rem;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    visibility: initial;
+}
+.visible-title {
+    visibility: visible;
+}
+
+.myNavCustom ul {
+    list-style-type: none;
+    margin: 0 2% auto 0;
+    padding-left: 0;
+    text-align: right;
+    max-width: 100%;
+}
+.myNavCustom ul li {
+    display: inline-block;
+    line-height: 42px;
+    margin-left: 10px;
+}
+.myNavCustom ul li a {
+    text-decoration: none;
+    color: #a9abae;
+}
+
+/* demo content */
+.content{ 
+    margin: 0 auto;
+    padding: 4rem 0;
+    width: 960px;
+    max-width: 100%;
+}
+
+.btn-group:hover .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-menu a {
+  display: block;
+    font-size: 18px;
+    font-family: Koodak;
+  color: #457d1f;
+  text-decoration: inherit;
+  padding:10px 15px;
+}
+
+.dropdown-menu a:hover {
+  color: #012b3e;
+  background-color: #28bab0;
+  border-radius:30px;
+}

@@ -1,0 +1,20 @@
+{% extends "main_template.html" %}
+
+{% block title %}خاطرات{% endblock  %}
+
+{% block content %}
+    <h1 class="text-center text-primary">خاطرات</h1>
+    <hr>
+    {% for memory in memories %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ memory.title }}</h5>
+            <p class="card-text">{{ memory.text}}</p>
+            {% for image in memory.images.all %}
+                <img src="{{ media_url}}{{ image.image_name }}" alt="{{ memory.title }}" class="img-thumbnail img300x200">
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

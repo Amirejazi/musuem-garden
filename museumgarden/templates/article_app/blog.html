@@ -1,0 +1,38 @@
+{% extends "main_template.html" %}
+
+{% block title %}مقالات{% endblock  %}
+
+{% block content %}
+    <h1 style="text-align: center;">مقاله ها</h1>
+    <hr>
+    {% for article in articles %}
+        {% if article.is_active == True %}
+            <div class="card mb-3">
+                <img class="card-img-top" src="{{media_url}}{{article.image}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{article.title}}</h5>
+                  <p class="card-text">{{article.short_text}}</p>
+                  <span><i class="fa fa-list-alt"></i>  نویسنده : </span>
+                  {% for i in articles_author %}
+                      {% if i.article_id == article.id %}
+                          {% for author in authors %}
+                              {% if i.author_id == author.id %}
+                                  <span>{{author.name}} {{author.family}}</span>
+                              {% endif %}
+                          {% endfor %}
+                      {% endif %}
+                  {% endfor %}
+                    <br>
+                    <br>
+                  <p class="card-text"><small class="text-muted"><i class="fa fa-calendar"></i>  آخرین بروزرسانی : {{article.updated_date}}  |  <i class="fa fa-eye"></i> بازدید : {{article.view_number}}</small></p>
+                    <div class="d-inline-block" data-toggle="popover" data-content="Disabled popover">
+                        <a href="{% url 'articles:detail_articles' article.slug %}">
+                            <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>مشاهده مقاله</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

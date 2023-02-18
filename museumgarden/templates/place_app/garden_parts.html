@@ -1,0 +1,25 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+    بخش های باغ
+{% endblock  %}
+
+{% block content %}
+    <h1> بخش های باغ</h1>
+    <div class="row">
+        {% for place in places %}
+            <div class="col-sm-6 col-md-4 ">
+                <div class="thumbnail card-body">
+                  <img class="img150x200" src="{{ media_url }}/{{ place.place_image }} " alt="Bootstrap Thumbnail Customization">
+                  <div class="caption">
+                    <h3>{{ place.place_name }}</h3>
+                    <p class="card-description description"> {{ place.information }}</p>
+                        <br> <strong>{{ place.visiting_hour }}</strong><br><strong>{{ place.visiting_day }}</strong>
+                    <p><a href="{% url 'places:part_detail' place.id %}" class="btn btn-primary"> مشاهده جزییات<i class="bi"></i></a></p>
+                  </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "main_template.html" %}
+{% load crispy_forms_tags %}
+{% block title %}ثبت خاطره{% endblock  %}
+
+{% block content %}
+    <h1 class="text-center text-primary">ثبت خاطره</h1>
+    <hr>
+    <div class="row justify-content-md-center">
+        <form action="" method="post" class="col-md-6" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ memoryForm |crispy }}
+            <br>
+            {{ image_formset.management_form }}
+            {% for form in image_formset %}
+                {{ form |crispy }}
+            {% endfor %}
+            <br />
+            <input type="submit" value="ثبت خاطره" class="btn btn-success btn-block">
+        </form>
+    </div>
+{% endblock %}

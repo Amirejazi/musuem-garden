@@ -1,0 +1,30 @@
+{% extends "main_template.html" %}
+
+{% block title %}workShops{% endblock  %}
+
+{% block content %}
+    {% for workshop in workshops %}
+        <div class="card mb-3">
+        <a href="#" style="color: #000000; text-decoration: none;">
+            <img class="card-img-top img830x180" src="{{media_url}}{{ workshop.image_name }}" alt="Card image cap">
+            <div class="card-body">
+              <h3 class="card-title">{{ workshop.title }}</h3>
+              <h5 class="card-title">مکان : {{ workshop.place }}</h5>
+              <h5 class="card-title">مدرس : {{ workshop.teacher }}</h5>
+              <p class="card-text">{{ workshop.information }}</p>
+              <p class="card-text"><small class="text-muted"><i class="fa fa-calendar"></i>  وضعیت : {{workshop.status}} | <i class="fa fa-eye"></i> بازدید : {{workshop.viewNumber}}</small></p>
+            </div>
+        </a>
+</div>
+    {% endfor %}
+
+
+
+{#    <main>#}
+{#        <section class="">#}
+{#            {% for workshop in workshops %}#}
+{##}
+{#            {% endfor %}#}
+{#        </section>#}
+{#    </main>#}
+{% endblock content %}

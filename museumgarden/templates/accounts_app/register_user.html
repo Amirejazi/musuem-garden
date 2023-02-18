@@ -1,0 +1,17 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+   ثبت نام
+{% endblock  %}
+
+{% block content %}
+    <div class="row justify-content-md-center">
+        <form action="" class="col-md-6" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <input type="submit" value="ثبت نام" class="btn btn-success btn-block">
+        </form>
+    </div>
+    <br>
+{% endblock %}

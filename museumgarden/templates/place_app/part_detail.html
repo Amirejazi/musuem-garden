@@ -1,0 +1,12 @@
+{% extends "main_template.html" %}
+
+{% block title %}
+   بخش های باغ | {{ place.place_name }}
+{% endblock  %}
+
+{% block content %}
+    <h1> {{ place.place_name }}</h1>
+    <img src="{{ media_url }}/{{ place.place_image }} " alt="Bootstrap Thumbnail Customization" class="img500x400">
+    <p style="font-family: Koodak; font-size: 20px"> {{ place.information }}</p>
+    <br> <strong>{{ place.visiting_hour }}</strong><br><strong>{{ place.visiting_day }}</strong>
+{% endblock %}

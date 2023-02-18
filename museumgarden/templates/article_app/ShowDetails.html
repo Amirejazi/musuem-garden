@@ -1,0 +1,46 @@
+{% extends "main_template.html" %}
+
+{% block title %}{{ article.title }}{% endblock  %}
+
+{% block content %}
+    <main class="article-main">
+        <h1>{{ article.title }}</h1>
+        <br>
+    <section class="article-section-text">
+        <h4 class="article-section-text-label">گروه مقاله: {{ article.group }}</h4>
+        <br>
+        <span class="article-section-text-label">نویسندگان: </span
+        {% for i in  articles_author %}
+            {% if i.article_id == article.id %}
+                {% for author in authors %}
+                    {% if i.author_id == author.id %}
+                        <span style="font-size:14px;">{{ author.name }} {{ author.family }}    </span>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        <br>
+        <br>
+        <h4 class="article-section-text-label">چکیده :</h4>
+        <p> {{ article.short_text }}</p>
+        <br>
+        <h4 class="article-section-text-label">کلمات کلیدی :</h4>
+        <p> {{ article.key_words }}</p>
+        <br>
+        <h4 class="article-section-text-label">متن مقاله :</h4>
+        <p> {{ article.text }}</p>
+        <br>
+        <section class="article-section-gallery">
+            <div class="container jumbotron-fluid">
+            {% for image in images_list %}
+                <span class="card-deck">
+                      <img class="img150x200" src="{{ media_url }}/images/articles/article-{{ article.id }}/{{ image }}" alt="Card image cap">
+
+                </span>
+            </div>
+            {% endfor %}
+            
+        </section>
+    </section>
+    </main>
+{% endblock %}
